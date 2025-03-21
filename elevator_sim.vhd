@@ -8,4 +8,4 @@ entity elevator_sim is
       );
 
 
-end elevator sim;
+end elevator_sim;
