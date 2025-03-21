@@ -3,16 +3,16 @@ use ieee.std_logic_1164.all;
 
 entity elevator is
   port (
-    up_req : in std_logic_vector(3 donwto 1);
-    dn_req : in std_logic_vector(4 downto 2);
-    go_req : in std_logic_vector(4 downto 1);
+    up_req : in std_logic_vector(3 donwto 1); -- floors requiring upwards transportation
+    dn_req : in std_logic_vector(4 downto 2); -- floors requiring downward transportaion
+    go_req : in std_logic_vector(4 downto 1); -- floors pressed from inside elevator
     poc : in std_logic;
     clk : in std_logic;
-    floor_ind : out std_logic_vector(4 downto 1);
-    emvup : out std_logic;
-    emvdn : out std_logic;
-    eopen : out std_logic;
-    eclose : out std_logic
+    floor_ind : out std_logic_vector(4 downto 1); -- current floor occupied
+    emvup : out std_logic; -- move up command
+    emvdn : out std_logic; -- move down command 
+    eopen : out std_logic; -- open door command 
+    eclose : out std_logic -- close door command 
        );
 
 
@@ -20,6 +20,7 @@ end entity elevator;
 
 
 architecture behavior of elevator is
+  signal current_dir : std_logic; -- 1 is up, 0 is down (internal signal)
 
 begin
 
