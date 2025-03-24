@@ -20,9 +20,22 @@ end entity elevator;
 
 
 architecture behavior of elevator is
-  signal current_dir : std_logic; -- 1 is up, 0 is down (internal signal)
+  signal current_dir : std_logic := '0'; -- 1 is up, 0 is down (internal signal)
+  signal moving : std_logic := '0'; -- 0 is not moving, 1 is moving
 
 begin
 
+  process(clk)
+  begin
+    if rising_edge(clk) then
+      if (poc = '1') then -- reset state
+
+      else -- normal operation
+
+
+
+      end if
+    end if
+  end process
 
 end  behavior;
