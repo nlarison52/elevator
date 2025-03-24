@@ -15,7 +15,6 @@ entity elevator is
     eclose : out std_logic -- close door command 
        );
 
-
 end entity elevator;
 
 
